@@ -9,6 +9,14 @@ Me contacter
 {% block body %}
     <h1>Laissez moi un message</h1>
 
+<div class="container-fluid">
+    <div class="row">
+    <div class="col-lg-6 col-md-6">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2639.867394317574!2d7.762408315865101!3d48.57408852863589!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796c96d34025333%3A0x4fefbe61ce54f79a!2sWild%20Code%20School%20-%20Formation%20d%C3%A9veloppeur%20web!5e0!3m2!1sfr!2sfr!4v1612474655454!5m2!1sfr!2sfr"
+                width="700" height="500" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0">
+
+        </iframe>
+    </div>
     <div class="contact col lg-6 col-md-6">
         {{ form_start(form) }}
 
@@ -34,7 +42,7 @@ Me contacter
         {{ form_widget(form.number, {'attr': {'placeholder': 'Entrer votre numéro'}}) }}
 
         <label for="contact_message">
-            Prénom
+            Votre message
         </label>
         {{ form_widget(form.message, {'attr': {'placeholder': 'Un message ? Une question ?'}}) }}
 
@@ -42,5 +50,7 @@ Me contacter
 
         {{ form_end(form) }}
     </div>
+    </div>
+</div>
 
 {% endblock %}
