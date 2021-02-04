@@ -1,0 +1,61 @@
+{% extends 'layout/base.html.twig' %}
+
+
+{% block body %}
+    <h1>Mes réalisations</h1>
+
+    <div class="container-fluid">
+        {% for project in projects %}
+            <div class="row projet">
+                {% if project.id % 2 == 0 %}
+                    <div class="col-lg-6 offset-lg-1 col-md-5 offset-md-1 text_left">
+                        <h2>
+                            {{ project.name }}
+                            <small class="text-white">
+                                {{ project.dateStart|date('d.m.Y') }} - {{ project.dateStart|date('d.m.Y') }}
+                            </small>
+                            {% if is_granted("ROLE_ADMIN") %}
+                            <a href="{{ path('project_show', {slug: project.slug}) }}">show</a>
+                            {% endif %}
+                        </h2>
+                        <p class="text-white">
+                            {{ project.description }}
+                        </p>
+                        <small class="text-info">
+                            <a class="lien" href="{{ project.url }}"> Voir le repo</a>
+                        </small>
+                    </div>
+                <div class="col-lg-2 col-md-3">
+                    <img src="{{ project.image }}" alt="{{ project.name }}">
+                </div>
+        {% else %}
+                <div class="col-lg-2 offset-lg-1 col-md-3 offset-md-1">
+                    <img src="{{ project.image }}" alt="{{ project.name }}">
+                </div>
+                <div class="col-lg-6 col-md-5 text_right">
+                    <h2>
+                        {{ project.name }}
+                        <small class="text-white">
+                            {{ project.dateStart|date('d.m.Y') }} - {{ project.dateStart|date('d.m.Y') }}
+                        </small>
+                        {% if is_granted("ROLE_ADMIN") %}
+                            <a href="{{ path('project_show', {slug: project.slug}) }}">show</a>
+                        {% endif %}
+                    </h2>
+                    <p class="text-white">
+                        {{ project.description }}
+                    </p>
+                    <small class="text-info">
+                        <a class="lien" href="{{ project.url }}"> Voir le repo</a>
+                    </small>
+                </div>
+            {% endif %}
+
+            </div>
+        {% endfor %}
+    </div>
+
+    {% if is_granted('ROLE_ADMIN') %}
+    <a href="{{ path('project_new') }}">Create new</a>
+    {% endif %}
+{% endblock %}

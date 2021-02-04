@@ -1,0 +1,36 @@
+{% extends 'layout/base.html.twig' %}
+
+
+{% block body %}
+    <h1>Skills index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for skill in skills %}
+            <tr>
+                <td>{{ skill.id }}</td>
+                <td>{{ skill.name }}</td>
+                <td>{{ skill.category }}</td>
+                <td>
+                    <a href="{{ path('skills_show', {slug: skill.slug}) }}">show</a>
+                    <a href="{{ path('skills_edit', {slug: skill.slug}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('skills_new') }}">Create new</a>
+{% endblock %}

@@ -1,0 +1,59 @@
+@import "~bootstrap/scss/bootstrap";
+@import 'variables';
+@import 'navbar';
+@import 'projet';
+@import "formation";
+
+body {
+    background-color: $primar;
+}
+
+h1 {
+    color: $second;
+    font-family: 'Bodoni Moda', serif;
+    margin: 20px;
+}
+
+h2 {
+    color: $third;
+    font-family: 'Gentium Book Basic', serif;
+    margin: 10px;
+}
+
+a, p {
+    font-family: 'Antic', serif;
+}
+
+a:link {
+    text-decoration: none;
+    > :visited {
+        text-decoration: none;
+    }
+}
+
+a.lien {
+    color: $second;
+    > :visited {
+        text-decoration: none;
+    }
+    &:hover {
+        color: $third;
+    }
+}
+
+form {
+    color: $second;
+    & label {
+        margin: 8px;
+    }
+}
+
+form button {
+    color: $second;
+    &:hover {
+        color: $third;
+    }
+}
+
+
+

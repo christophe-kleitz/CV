@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel="icon" href="/build/images/me.jpg"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Gentium+Book+Basic&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Antic&family=Bodoni+Moda&display=swap" rel="stylesheet">
+        <title>{% block title %} Christophe Kleitz {% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-3 col-md-2 menu">
+                {% include 'layout/_navbar.html.twig' %}
+            </div>
+            <div class="col-lg-9 col-md-10">
+                {% for category, messages in app.flashes %}
+                    {% for message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+                    {% if is_granted("ROLE_ADMIN") %}
+                    Bienvenue sur ton CV couillon ! :)
+                    {% endif %}
+                {% endfor %}
+                {% block body %}
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

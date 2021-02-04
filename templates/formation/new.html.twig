@@ -1,0 +1,42 @@
+{% extends 'layout/base.html.twig' %}
+
+
+{% block body %}
+    <h1>Create new Formation</h1>
+
+    <div class="contact col lg-6 col-md-6">
+        {{ form_start(form) }}
+
+        <label for="formation_name">
+            Nom de la formation
+        </label>
+        {{ form_widget(form.name, {'attr': {'placeholder': 'Entrer votre nom'}}) }}
+
+        <div class="row">
+            <div class="col-lg-6">
+                <label for="formation_start">
+                    Date de début
+                </label>
+                {{ form_widget(form.start, {'attr': {'placeholder': 'Entrer votre prénom'}}) }}
+            </div>
+            <div class="col-lg-6">
+                <label for="formation_end">
+                    Date de fin
+                </label>
+                {{ form_widget(form.end, {'attr': {'placeholder': 'Entrer votre email'}}) }}
+            </div>
+        </div>
+
+        <label for="formation_description">
+            Description
+        </label>
+        {{ form_widget(form.description, {'attr': {'placeholder': 'Un message ? Une question ?'}}) }}
+
+
+
+
+        {{ form_end(form) }}<button class="btn">Envoyer</button>
+    </div>
+
+    <a href="{{ path('formation_index') }}">back to list</a>
+{% endblock %}

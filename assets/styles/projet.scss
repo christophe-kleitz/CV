@@ -1,0 +1,13 @@
+.projet {
+  margin-bottom: 25px;
+  & img {
+    max-height: 250px;
+    max-width: 300px;
+  }
+  & .text_left {
+    text-align: left;
+  }
+  & .text_right {
+    text-align: right;
+  }
+}

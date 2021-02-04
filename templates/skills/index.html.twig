@@ -1,0 +1,41 @@
+{% extends 'layout/base.html.twig' %}
+
+{% block title %}
+Compétences
+{% endblock %}
+
+{% block body %}
+    <h1>Compétences</h1>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-4 offset-lg-1 col-md-3 offset-md-2">
+            <h2>
+                Soft Skills
+            </h2>
+            {% for skill in skills %}
+                {% if skill.category == 'Soft Skills' %}
+                <p class="text-white">
+                    {{ skill.name }}
+                </p>
+                {% endif %}
+            {% endfor %}
+            </div>
+            <div class="col-lg-4 offset-lg-2 col-md-3 offset-md-2">
+                <h2>
+                    Hard Skills
+                </h2>
+                {% for skill in skills %}
+                    {% if skill.category == 'Hard Skills' %}
+                        <p class="text-white">
+                            {{ skill.name }}
+                        </p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+
+    <a href="{{ path('skills_new') }}">Create new</a>
+{% endblock %}
