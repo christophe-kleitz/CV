@@ -9,12 +9,14 @@ body {
 }
 
 h1 {
+    text-align: center;
     color: $second;
     font-family: 'Bodoni Moda', serif;
     margin: 20px;
 }
 
 h2 {
+    //text-align: center;
     color: $third;
     font-family: 'Gentium Book Basic', serif;
     margin: 10px;
@@ -48,10 +50,19 @@ form {
     }
 }
 
-form button {
+.contact button {
     color: $second;
     &:hover {
         color: $third;
+    }
+}
+
+.quote {
+    font-family: 'Bodoni Moda', serif;
+    color: $third;
+    font-size: xx-large;
+    & q {
+        quotes: "„" "“";
     }
 }
 

@@ -1,14 +1,14 @@
 <div class="menu">
-    <div class="logo">
+    <div class="logo" onclick="openNav()">
         <a href="{{ path('home') }}">
             <img src="{{ asset('build/images/me.jpg') }}" alt="Just my face">
         </a>
     </div>
 
-    <nav>
+    <nav id="navMenu">
         <ul>
             <li>
-                <a href="/">A propos</a>
+                <a href="{{ path('about') }}">A propos</a>
             </li>
             <li>
                 <a href="{{ path('skills_index') }}">Compétences</a>
@@ -24,6 +24,7 @@
             </li>
         </ul>
     </nav>
+
 
     {% if is_granted("ROLE_ADMIN") %}
         <a href="{{ path('app_logout') }}"> Bye bye ! </a>

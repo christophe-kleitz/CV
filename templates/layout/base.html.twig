@@ -2,6 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="/build/images/me.jpg"/>
         <link rel="preconnect" href="https://fonts.gstatic.com">
         <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda&display=swap" rel="stylesheet">
@@ -15,10 +16,10 @@
     <body>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-lg-3 col-md-2 menu">
+            <div class="col-lg-2 col-md-1">
                 {% include 'layout/_navbar.html.twig' %}
             </div>
-            <div class="col-lg-9 col-md-10">
+            <div class="col-lg-10 col-md-11">
                 {% for category, messages in app.flashes %}
                     {% for message in messages %}
                         <div class="alert alert-{{ category }}">
@@ -26,12 +27,20 @@
                         </div>
                     {% endfor %}
 
-                    {% if is_granted("ROLE_ADMIN") %}
-                    Bienvenue sur ton CV couillon ! :)
-                    {% endif %}
+
                 {% endfor %}
                 {% block body %}
+                    {% if is_granted("ROLE_ADMIN") %}
+                    <h1>
+                        Bienvenue sur ton CV couillon ! :)
+                    </h1>
+                {% endif %}
                 {% endblock %}
+                <p class="quote">
+                    Un jour, un grand sage a dit:
+                    <q> Tout le monde peut devenir dév avec l'envie et un bon accompagnement</q>,
+                    ce sage avait un nom: Yavuz KUTUK
+                </p>
             </div>
         </div>
     </div>
