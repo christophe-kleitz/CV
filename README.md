@@ -9,7 +9,8 @@
 6. **ENJOY** ou pas
 
 ## Diagrame UML de la BDD
-file:///home/christophe/Documents/Wild%20Code%20School/Checkpoint/Checkpoint%204%203.2.2021/CP4_CV.png
+![BDD](https://github.com/christophe-kleitz/CV/blob/Blabla/CP4_CV.png)
+
 
 ## Wireframe
 [Par ici](https://whimsical.com/cp-4-VvihbvNtcNvdLim7iCTtB5)
